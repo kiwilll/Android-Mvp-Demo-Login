@@ -173,6 +173,49 @@ public void doSomething() {
 }
 ```
 
+##### 接口返回错误处理
+
+1. 通用业务处理
+
+```
+//在com.hw.mvpbase.basenetwork.consume。BaseApiErrorConsumer中
+/**
+ * 处理ApiException，这里仅仅处理一些常规、全局的异常
+ *
+ * @param e
+ * @return 异常是否被处理掉了，具体业务相关的异常由子类自己去处理
+ */
+private boolean handleApiException(ApiException e) {
+    //TODO 处理通用错误
+    return false;
+}
+```
+
+2. 具体业务错误
+
+```
+ DemoApi.postSomething("something")
+.subscribe(new BaseApiResultConsumer<BaseResponse>() {
+    @Override
+    protected void handleResult(BaseResponse result) throws Exception {
+        super.handleResult(result);
+    }
+}, new BaseApiErrorConsumer<Throwable>(mContext, getView()) {
+    @Override
+    public void handleError(Throwable t, boolean handled) throws Exception {
+        super.handleError(t, handled);
+        //此处对自己业务的错误进行处理
+      if (!handled) {
+            if (t instanceof ApiException) {
+                handleException((ApiException) t);
+            } else {
+                getView().toastMessage(t.getMessage());
+            }
+        }
+    }
+});
+```
+
 ### Authors
 
 * hewei
