@@ -1,0 +1,432 @@
+{
+  "login": [
+    {
+      "url": "msx://m.bwton.com/login/code?jumptype=*",
+      "iclass": "BWTLoginCodeViewController",
+      "aclass": "com.bwton.metro.usermanager.business.login.views.QuickLoginActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/login/password",
+      "iclass": "BWTLoginPasswordViewController",
+      "aclass": "com.bwton.metro.usermanager.business.login.views.PwdLoginActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/login/register",
+      "iclass": "BWTLoginRegisterViewController",
+      "aclass": "com.bwton.metro.usermanager.business.register.views.RegisterActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/login/findpwd",
+      "iclass": "BWTFindPasswordViewController",
+      "aclass": "com.bwton.metro.usermanager.business.resetpwd.views.ResetPwdActivity"
+    }
+  ],
+  "user": [
+
+    {
+
+      "url":"msx://m.bwton.com/user/center?jumptype=*",
+
+      "iclass":"BWTUserCenterViewController",
+
+      "aclass":"com.bwton.metro.userinfo.business.views.UserInfoActivity"
+
+    },
+
+    {
+
+      "url":"msx://m.bwton.com/user/modifypwd?jumptype=*",
+
+      "iclass":"BWTUserCenterModifyPwdViewController",
+
+      "aclass":"com.bwton.metro.usermanager.business.resetpwd.views.ModifyPwdActivity"
+
+    },
+
+    {
+
+      "url":"msx://m.bwton.com/user/modifyphone?jumptype=*",
+
+      "iclass":"BWTUserCenterModifyPhoneViewController",
+
+      "aclass":"com.bwton.metro.userinfo.business.views.ModifyMobileActivity"
+
+    },
+
+    {
+
+      "url":"msx://m.bwton.com/user/modifynickname?jumptype=*",
+
+      "iclass":"BWTUserCenterModifyNicknameViewController",
+
+      "aclass":"com.bwton.metro.userinfo.business.views.ModifyNicknameActivity"
+
+    }
+
+
+  ],
+  "webview": [
+    {
+      "url": "msx://m.bwton.com/webview",
+      "iclass": "BWTWKWebViewController",
+      "aclass": "com.bwton.metro.base.webview.BwtWebviewActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/webview/wk?*url=*&title=*",
+      "iclass": "BWTWKWebViewController",
+      "aclass": "com.bwton.metro.base.webview.BwtWebviewActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/webview/ui?*url=*&title=*",
+      "iclass": "BWTUIWebViewController",
+      "aclass": "com.bwton.metro.base.webview.BwtWebviewActivity"
+    }
+  ],
+  "home": [
+    {
+      "oldurl": "BWTHomePage",
+      "url": "msx://m.bwton.com/home/index?url=*",
+      "iclass": "BWTHomePageViewController",
+      "aclass": "cn.com.thit.wxmetro.activities.main.MainTabActivity"
+    }
+  ],
+  "launch": [
+    {
+      "url": "msx://m.bwton.com/launch",
+      "iclass": "",
+      "aclass": "cn.com.thit.wxmetro.activities.launch.LaunchActivity"
+    }
+  ],
+  "wallet": [
+    {
+      "url": "msx://m.bwton.com/wallet/index",
+      "iclass": "BWTWalletViewController",
+      "aclass": "com.bwton.metro.wallet.business.wallet.WalletIndexActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/wallet/cardmeal",
+      "iclass": "BWTCountPayViewController",
+      "aclass": "com.bwton.metro.wallet.business.recharge.cardmeal.CardMealActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/wallet/moneymeal",
+      "iclass": "BWTMoneyPayViewController",
+      "aclass": "com.bwton.metro.wallet.business.recharge.moneymeal.MoneyMealActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/wallet/coupon",
+      "iclass": "BWTDiscountCouponViewController",
+      "aclass": "com.bwton.metro.wallet.business.coupon.CouponActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/wallet/payorder",
+      "iclass": "BWTPaymentSequenceViewController",
+      "aclass": "com.bwton.metro.wallet.business.payorder.PayOrderActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/webview/wk?url=https%3A%2F%2Fapi.msx.bwton.com%2Fapi_h5%2Fsetsumei%2Ftyaji.html",
+      "iclass": "",
+      "aclass": ""
+    },
+    {
+      "url": "msx://m.bwton.com/wallet/refund/submit",
+      "iclass": "BWTReturnedMoneyViewController",
+      "aclass": "com.bwton.metro.wallet.business.refund.refundsubmit.RefundActivity"
+    },
+
+    {
+      "url": "msx://m.bwton.com/wallet/refund/noSubmit",
+      "iclass": "BWTReturnMoneyNoViewController",
+      "aclass": "com.bwton.metro.wallet.business.refund.refundsubmit.RefundActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/wallet/refund/histroy",
+      "iclass": "BWTRefundListViewController",
+      "aclass": "com.bwton.metro.wallet.business.refund.refundhistroy.RefundSchduleListActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/wallet/refund/schedule",
+      "iclass": "BWTUIWebViewController",
+      "aclass": "com.bwton.metro.wallet.business.refund.refundschedule.RefundScheduleActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/wallet/bankcard/list",
+      "iclass": "BWTBankCardListViewController",
+      "aclass": "com.bwton.metro.wallet.business.bankcard.BankListActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/wallet/traderecord/list",
+      "iclass": "BWTTradeDetailListViewController",
+      "aclass": "com.bwton.metro.wallet.business.traderecord.traderecord.TradeRecordActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/wallet/traderecord/detail",
+      "iclass": "",
+      "aclass": "com.bwton.metro.wallet.business.traderecord.tradedetail.TradeDetailActivity"
+    },
+
+    {
+      "url": "msx://m.bwton.com/wallet/webView",
+      "iclass": "BWTWKWebViewController",
+      "aclass": "com.bwton.metro.wallet.business.traderecord.tradedetail.TradeDetailActivity"
+    }
+  ],
+  "pay": [
+    {
+      "url": "msx://m.bwton.com/pay/confirm",
+      "iclass": "",
+      "aclass": "bwton.com.bwtonpay.business.pay.ConfirmPayActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/pay/parking/pay",
+      "iclass": "",
+      "aclass": "bwton.com.bwtonpay.business.parkingpay.ParkingConfirmPayActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/pay/parking/result",
+      "iclass": "",
+      "aclass": "bwton.com.bwtonpay.business.parkingresult.ParkingResultActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/pay/unionpay",
+      "iclass": "",
+      "aclass": "bwton.com.bwtonpay.business.unionpay.UnionPayActivity"
+    }
+  ],
+  "pekbd": [
+    {
+      "url": "msx://m.bwton.com/pekbd/pekeyboard",
+      "iclass": "",
+      "aclass": "com.bwton.pekeyboard.business.BwtonPEKbdActivity"
+    }
+  ],
+  "authid": [
+    {
+      "url": "msx://m.bwton.com/authid/bindcard",
+      "iclass": "BWTAuthIDBindBankCardViewController",
+      "aclass": "com.bwton.metro.authid.business.bindcard.PayActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/authid/2e",
+      "iclass": "BWTAuthID2ElementsPage",
+      "aclass": ""
+    },
+    {
+      "url": "msx://m.bwton.com/authid/3e?open_account_type=*",
+      "iclass": "BWTAuthID3ElementsPage",
+      "aclass": "com.bwton.metro.authid.business.setrealname.SetRealName3EActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/authid/4e?open_account_type=*",
+      "iclass": "BWTAuthID4ElementsPage",
+      "aclass": "com.bwton.metro.authid.business.setrealname.SetRealNameActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/authid/openaccount",
+      "iclass": "BWTAuthIDPayPasswordViewController",
+      "aclass": "com.bwton.metro.authid.business.accountopen.AccountOpenActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/authid/addcard",
+      "iclass": "BWTAuthID4ElementsPage",
+      "aclass": "com.bwton.metro.authid.business.addbankcard.AddBankActivity"
+    }
+  ],
+  "payqrcode": [
+    {
+      "url": "msx://m.bwton.com/payqrcode/open",
+      "iclass": "BWTPayQRCodeOpenViewController",
+
+      "aclass": "com.bwton.qrcodepay.business.dredgeqrpay.views.DredgeQrPayActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/initiative",
+      "iclass": "BWTPayQRCodeInitiativeViewController",
+
+      "aclass": "com.bwton.qrcodepay.business.initiativescan.views.InitiativeScanActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/initiative_confirm",
+      "iclass": "BWTPayQRCodeConfirmViewController",
+
+      "aclass": "com.bwton.qrcodepay.business.initiativescan.views.InitiativeScanConfirmActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/initiative_result",
+      "iclass": "",
+      "aclass": "com.bwton.qrcodepay.business.initiativescan.views.InitiativeScanResultActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/passive",
+      "iclass": "BWTPayQRCodePassiveViewController",
+
+      "aclass": "com.bwton.qrcodepay.business.passivityscan.views.PassivityScanActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/passive_result",
+      "iclass": "",
+      "aclass": "com.bwton.qrcodepay.business.passivityscan.views.PassivityScanResultActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/change_pwd",
+      "iclass": "BWTPayQRCodeChangePwdInputInfoViewController",
+
+      "aclass": "com.bwton.qrcodepay.business.changepaypw.views.ChangePayPWActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/change_pwd_comfirm",
+      "iclass": "",
+      "aclass": "com.bwton.qrcodepay.business.changepaypw.views.ComfirmPayPwActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/rest_pwd",
+      "iclass": "BWTPayQRCodeResetPwdInputInfoViewController",
+
+      "aclass": "com.bwton.qrcodepay.business.resetpaypw.views.ResetPayPWActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/without_pwd",
+      "iclass": "BWTPayQRCodeWithoutPwdViewController",
+
+      "aclass": "com.bwton.qrcodepay.business.payline.views.PayLineActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/pay_manager",
+      "iclass": "BWTPayQRCodeManagerViewController",
+
+      "aclass": "com.bwton.qrcodepay.business.paymanager.views.PayManagerActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/webview/ui",
+      "iclass": "",
+      "aclass": "com.bwton.qrpay.WebviewActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/payqrcode/resultsuccess",
+      "iclass": "",
+      "aclass": "com.bwton.qrcodepay.business.resultsuccess.ResultSuccessActivity"
+    }
+  ],
+  "oifi": [
+    {
+      "url": "msx://m.bwton.com/oifi/index",
+      "iclass": "BWTOiFiMainViewController",
+      "aclass": "com.bwton.metro.oifi.business.oifimain.OifiMainActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/oifi/setting",
+      "iclass": "BWTOiFiSetViewController",
+      "aclass": "com.bwton.metro.oifi.business.oifisetting.OifiSettingActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/oifi/history",
+      "iclass": "BWTOiFiListViewController",
+      "aclass": "com.bwton.metro.oifi.business.oifihistory.OifiHistroyActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/oifi/detail",
+      "iclass": "BWTOiFiWKWebViewController",
+      "aclass": "com.bwton.metro.oifi.business.oifidetail.OifiWebViewActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/oifi/collect",
+      "iclass": "BWTOiFiCollectionViewController",
+      "aclass": "com.bwton.metro.oifi.business.oificollect.OifiCollectActivity"
+    }
+
+  ],
+  "city": [
+    {
+      "url": "msx://m.bwton.com/city/list",
+      "iclass": "BWTCitySelectViewController",
+      "aclass": "com.bwton.metro.city.business.views.CityListActivity"
+    }
+  ],
+  "ridecode": [
+    {
+      "url": "msx://m.bwton.com/ridecode/index?serviceid=*",
+      "iclass": "BWTRideCodeViewController",
+      "aclass": "com.bwton.metro.ridecode.business.views.RideCodeActivity"
+    }
+  ],
+  "message": [
+    {
+      "url": "msx://m.bwton.com/message/type?jumptype=*",
+      "iclass": "BWTMessageTypePage",
+      "aclass": "com.bwton.metro.message.business.views.MessageTypeActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/message/list?jumptype=*&*msgtype=*&titlestr=*",
+      "iclass": "BWTMessageListPage",
+      "aclass": "com.bwton.metro.message.business.views.MessageListActivity"
+    }
+  ],
+
+  "neusoft": [
+    {
+      "url": "msx://m.bwton.com/neusoft/index",
+      "iclass": "Neusoft_NeusoftMetroViewController",
+      "aclass": " "
+    }
+  ],
+
+  "mine": [
+    {
+      "url": "msx://m.bwton.com/mine/minepage",
+      "iclass": "BWTMinePage",
+      "aclass": "com.bwton.metro.mine.business.views.MineFragment"
+    },
+
+    {
+      "url": "msx://m.bwton.com/mine/setting",
+      "iclass": "BWTSettingViewController",
+      "aclass": "com.bwton.metro.mine.business.views.SettingActivity"
+    },
+
+    {
+      "url": "msx://m.bwton.com/mine/greentravel",
+      "iclass": "BWTGreenTravelViewController",
+      "aclass": "com.bwton.metro.base.webview.BwtWebviewActivity"
+    },
+
+    {
+      "url": "msx://m.bwton.com/mine/invite",
+      "iclass": "BWTShareViewController",
+      "aclass": "com.bwton.metro.mine.business.views.InviteActivity"
+    },
+
+    {
+      "url": "msx://m.bwton.com/mine/feedback?jumptype=*&*suggestiontype=*&title=*",
+      "iclass": "BWTFeedBackViewController",
+      "aclass": "com.bwton.metro.mine.business.views.FeedbackActivity"
+    },
+
+    {
+      "url": "msx://m.bwton.com/mine/about",
+      "iclass": "",
+      "aclass": "com.bwton.metro.mine.business.views.AboutUsActivity"
+    }
+
+  ],
+
+  "cbc": [
+    {
+      "url": "msx://m.bwton.com/cbc/index",
+      "iclass": "BWTCBCViewController",
+      "aclass": "com.bwton.metro.cbc.CbcIntermediateActivity"
+    }
+  ],
+
+  "lanuch": [
+    {
+      "url": "msx://m.bwton.com/lanuch/intro",
+      "iclass": "",
+      "aclass": "com.bwton.metro.lanuch.intro.IntroActivity"
+    },
+    {
+      "url": "msx://m.bwton.com/lanuch/index",
+      "iclass": "",
+      "aclass": "com.bwton.metro.lanuch.lanuch.LanuchActivity"
+    }
+  ]
+}
