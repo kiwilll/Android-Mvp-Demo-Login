@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.bwton.sdk.ridecode.business.MainActivity">
+
+    <Button
+        android:id="@+id/btn_qrscan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扫码（银联标准码）"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_qrscan_yct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扫码（羊城通）"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_getcity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="城市列表-获取乘车码" />
+
+    <Button
+        android:id="@+id/btn_getcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取乘车码"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_sdkauth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sdk授权"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="同步规则" />
+
+    <Button
+        android:id="@+id/btn_qrcodeauth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发码授权"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/ed_userid"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="userid"
+            android:lines="1" />
+
+        <EditText
+            android:id="@+id/ed_cityid"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="cityid"
+            android:lines="1" />
+
+        <EditText
+            android:id="@+id/ed_appid"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="appid"
+            android:lines="1" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/ed_appkey"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="appkey"
+            android:lines="1" />
+
+        <EditText
+            android:id="@+id/ed_sha1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="sha1"
+            android:lines="1" />
+
+        <EditText
+            android:id="@+id/ed_packagename"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="packagename"
+            android:lines="1" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ed_apppublickey"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        android:hint="apppublickey"
+        android:lines="1"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/ed_serverpublickey"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        android:hint="serverpublickey"
+        android:lines="1"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/ed_appprivatekey"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        android:hint="appprivatekey"
+        android:lines="1"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="若不输入则使用默认值"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_init"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重新初始化"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重置所有为默认值并清空输入框"
+        android:visibility="visible" />
+</LinearLayout>

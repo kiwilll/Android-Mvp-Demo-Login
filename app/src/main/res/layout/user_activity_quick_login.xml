@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bwt_background_color"
+    android:orientation="vertical">
+
+    <com.bwton.metro.uikit.BwtTopBarView
+        android:id="@+id/topbar_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        app:titleText="@string/user_quick_login"
+        />
+
+    <com.hw.mvpbase.uikit.BwtMaterialEditText
+        android:id="@+id/ql_et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="32dp"
+        android:paddingRight="6dip"
+        android:digits="0123456789"
+        android:textSize="14sp"
+        android:textColorHint="@color/bwt_edittext_hint"
+        android:hint="请输入手机号码"
+        android:inputType="phone"
+        android:maxLength="11"
+        app:met_iconPadding="0dp"
+        app:met_primaryColor="@color/bwt_primary_ui_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        >
+
+        <com.hw.mvpbase.uikit.BwtMaterialEditText
+            android:id="@+id/ql_et_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:maxLength="4"
+            android:paddingTop="16dip"
+            android:paddingRight="120dip"
+            android:textSize="14sp"
+            android:textColorHint="@color/bwt_edittext_hint"
+            app:met_iconPadding="0dp"
+            app:met_primaryColor="@color/bwt_primary_ui_color" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ql_et_code"
+            android:layout_alignTop="@+id/ql_et_code"
+            android:layout_alignParentRight="true"
+            android:paddingTop="5dip"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ql_btn_get_code"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:background="@null"
+                android:enabled="false"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:text="@string/user_get_code"
+                android:textColor="#ffbd42"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/ql_btn_login"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/bwt_btn_main"
+        android:enabled="false"
+        android:text="登  录"
+        android:textColor="@android:color/white"
+        android:textSize="18dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbAgreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/bwt_btn_checkbox"
+            android:checked="false"
+            android:paddingLeft="10dip"
+            android:text="我已阅读并同意"
+            android:textSize="14dp"
+            android:textColor="@color/bwt_second_text_color"
+            />
+
+        <TextView
+            android:id="@+id/tv_quicklogin_agreenment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:paddingLeft="5dip"
+            android:text=" 用户协议 "
+            android:textColor="@color/bwt_sel_second_ui_text"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dip"
+        >
+
+        <TextView
+            android:id="@+id/ql_tv_regist"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:layout_marginLeft="32dp"
+            android:text="注册账号"
+            android:textColor="@color/bwt_sel_primary_text"
+            android:textSize="15dp"
+            android:visibility="visible"
+            android:gravity="center_vertical"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/ql_tv_login_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:layout_marginRight="32dp"
+            android:text="账号密码登录"
+            android:textColor="@color/bwt_sel_primary_text"
+            android:textSize="15dp"
+            android:visibility="visible"
+            android:gravity="center_vertical"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

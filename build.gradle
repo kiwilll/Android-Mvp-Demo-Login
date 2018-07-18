@@ -9,7 +9,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -18,22 +17,8 @@ buildscript {
 
 allprojects {
     repositories {
-        flatDir {
-            dirs 'libs'
-        }
-        jcenter()
-        maven {
-            url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
-        }
-        maven { url "https://jitpack.io" }
-        maven {
-            url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
-        }
-        maven { url "http://60.190.227.164:8088/nexus/repository/maven-releases/" }
         google()
-        maven { url "file:///D:\\nexus\\repository"}
-        mavenLocal()
-        maven { url "file:///Users/hjy/.m2/repository/"}
+        jcenter()
     }
 }
 

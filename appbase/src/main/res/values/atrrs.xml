@@ -1,0 +1,18 @@
+<resources>
+
+    <declare-styleable name="BwtTopBar">
+        <attr name="titleText" format="string|reference"></attr>
+        <attr name="titleSize" format="dimension|reference"></attr>
+        <attr name="titleColor" format="color|reference"></attr>
+        <attr name="backIcon" format="reference"></attr>
+        <attr name="rightText" format="string|reference"></attr>
+        <attr name="rightTextSize" format="dimension|reference"></attr>
+        <attr name="rightTextColor" format="color|reference"></attr>
+        <attr name="titleBackground" format="color|reference"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="BwtLoadingView">
+        <attr name="loadingColor" format="color"/>
+    </declare-styleable>
+
+</resources>

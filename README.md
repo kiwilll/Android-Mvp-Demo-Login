@@ -1,98 +1,177 @@
-### android-mvp-login demo
+### android-mvp demo
+
+使用MVP架构，对网络层进行封装，提供基本的加签验签，加密解密。以登录模块业务功能为范本的一个Demo.
 
 ### 功能介绍
 
-* 验证码登录；
-* 密码登录；
-* 用户注册；
-* 找回密码；
-* 阅读用户协议界面；
+* MVP底层封装
+* 使用retrofit和rxjava对网络层进行封装
+* 提供基本的界面组件、动画样式等
+* 提供基本的工具类
 
-### 安装
-
-在工程根目录里的build.gradle文件里添加如下maven地址：
+### 第三方依赖库-底层
 
 ```
-allprojects {
-    repositories {		
-        maven { url "http://60.190.227.164:8088/nexus/repository/maven-releases/" }
-    }
-}
+compile 'io.reactivex.rxjava2:rxjava:2.0.1'
+compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+compile 'com.rengwuxian.materialedittext:library:2.1.4'
 ```
 
-在gradle.properties里添加配置：
-```
-android.enableAapt2=false
-```
-
-在项目模块的build.gradle文件里添加如下依赖：
-
-远程依赖库：
-```
-compile 'com.bwton.android:bwtlogin:1.0.0'
-```
-
-本地依赖库（发布本地maven库，自己管理）：
-```
-compile 'com.bwton.android:bwtloginlocal:1.0.0'
-```
-
-### 第三方依赖库
+### 第三方依赖-业务层
 
 ```
 compile 'com.jakewharton:butterknife:8.4.0'
 annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-compile 'com.bwton.android:bwtbasebiz:1.0.0'
 ```
+* butterknife集成及使用请参考网络解疑
 
 ### 使用说明
 
-##### 1. 支持的路由功能
+#####  使用MVP搭建自己的页面
 
-页面 | 路由url | 备注 |
--- | -- | --
-验证码登录 | msx://m.bwton.com/login/code |  |
-密码登录 | msx://m.bwton.com/login/password |  |
-注册 | msx://m.bwton.com/login/register |  |
-忘记密码 | msx://m.bwton.com/login/findpwd |  |
+1.创建Contract
 
-路由文件配置如下：
 ```
-[
-    {
-      "url": "msx://m.bwton.com/login/code?jumptype=*",
-      "iclass": "BWTLoginCodeViewController",
-      "aclass": "com.bwton.metro.usermanager.business.login.views.QuickLoginActivity"
-    },
-    {
-      "url": "msx://m.bwton.com/login/password",
-      "iclass": "BWTLoginPasswordViewController",
-      "aclass": "com.bwton.metro.usermanager.business.login.views.PwdLoginActivity"
-    },
-    {
-      "url": "msx://m.bwton.com/login/register",
-      "iclass": "BWTLoginRegisterViewController",
-      "aclass": "com.bwton.metro.usermanager.business.register.views.RegisterActivity"
-    },
-    {
-      "url": "msx://m.bwton.com/login/findpwd",
-      "iclass": "BWTFindPasswordViewController",
-      "aclass": "com.bwton.metro.usermanager.business.resetpwd.views.ResetPwdActivity"
+public interface DemoContract {
+
+    interface View extends BaseView {
+        /**
+         * 页面处理
+         *
+         * @param something 待显示的内容
+         */
+        void showSomething(String something);
     }
-]
+
+    abstract class Presenter extends AbstractPresenter<LoginContract.View> {
+
+        /**
+         * 业务功能
+         */
+        public abstract void doSomething();
+
+    }
+
+}
 ```
 
-##### 2. 特殊事件通知
-* 登录成功后，会通过EventBus发出通知事件：LoginSuccEvent；
-* 登录成功后，会自动去同步一次用户信息，用户信息同步成功后会发出通知事件：UserInfoRefreshEvent；
+2.创建界面继承BaseActivity,并实现Contract中的View接口
+* BaseActivity中已经实现了底层中的多个基础方法，有利于通用业务的集中处理
 
-### 集成说明
-集成本业务模块，必须保证以下功能或业务模块有正确初始化，否则会运行异常：
+```
+public class DemoActivity extends BaseActivity implements DemoContract.View {
 
-1. bwtbase
-2. bwtbasebiz
+    @Override
+    public void showSomething(String something) {
 
-其他模块如何初始化，请具体参考该模块的接入说明文档。
+    }
+
+    @Override
+    public int getLayoutId() {
+        return 0;
+    }
+
+    @Override
+    public String getPageTitle() {
+        return null;
+    }
+}
+```
+
+3.创建Presenter继承Contract中的Presenter
+
+```
+public class DemoPresenter extends DemoContract.Presenter {
+    private Context mContext;
+
+    public DemoPresenter(Context context) {
+        mContext = context;
+    }
+
+    @Override
+    public void attachView(@NonNull LoginContract.View view) {
+        super.attachView(view);
+    }
+
+    @Override
+    public void detachView() {
+        super.detachView();
+        mContext = null;
+    }
+
+    @Override
+    public void doSomething() {
+
+    }
+}
+```
+
+4.实现接口
+* 根据自己定义的业务接口进行重写实现
+
+##### 搭建自己的API接口请求
+
+1. 创建Service
+
+```
+public interface DemoService {
+
+    @POST("")
+    Observable<BaseResponse> postSomething(@HeaderMap Map<String, String> headers, @Body String jsonBody);
+
+    Observable<BaseResponse> postSomething(@Url String url, @HeaderMap Map<String, String> headers, @Body String jsonBody);
+}
+```
+
+2. 创建实现类
+
+```
+public class DemoApi extends BaseApi {
+
+    private static DemoService getDemoService() {
+        return getService(DemoService.class);
+    }
+
+    public static Observable<BaseResponse> postSomething(String something) {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("something", something);
+
+        String bodyJson = strMapToJson(map);
+        Map<String, String> headerMap = getHeaderMap(bodyJson, null);
+
+        Observable<BaseResponse> observable = getDemoService().postSomething(headerMap, bodyJson)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+        return observable;
+    }
+}
+```
+
+3. 在Presenter中使用
+
+```
+@Override
+public void doSomething() {
+    removeDisposable(mDisposable);
+
+    mDisposable = DemoApi.postSomething("something")
+            .subscribe(new BaseApiResultConsumer<BaseResponse>() {
+                @Override
+                protected void handleResult(BaseResponse result) throws Exception {
+                    super.handleResult(result);
+                }
+            }, new BaseApiErrorConsumer<Throwable>(mContext, getView()) {
+                @Override
+                public void handleError(Throwable t, boolean handled) throws Exception {
+                    super.handleError(t, handled);
+                }
+            });
+
+    addDisposable(mDisposable);
+}
+```
 
 ### Authors
 

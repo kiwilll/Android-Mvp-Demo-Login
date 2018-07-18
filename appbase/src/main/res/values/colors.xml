@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 弹出框的背景颜色 -->
+    <color name="bwt_pop_window_bg">#ffffff</color>
+    <!-- 弹出框title颜色 -->
+    <color name="bwt_dialog_title_text">#ff000000</color>
+    <!-- 弹出框内容颜色 -->
+    <color name="bwt_dialog_content_text">#ff686868</color>
+    <!-- 弹出框button字体颜色正常状态 -->
+    <color name="bwt_dialog_button_text_normal">#ff323236</color>
+    <!-- 弹出框button字体颜色正常状态 -->
+    <color name="bwt_dialog_button_text_pressed">#ff087afa</color>
+
+    <!-- 弹出框button点击后的背景色 -->
+    <color name="bwt_dialog_button_bg_pressed">#337581a0</color>
+    <!-- 弹出框button默认颜色 -->
+    <color name="bwt_dialog_button_bg_normal">#ffffffff</color>
+    <!-- 加载对话框字体颜色 -->
+    <color name="bwt_dialog_loading_text">#666666</color>
+
+    <!-- 导航栏中间title的颜色值 -->
+    <color name="bwt_title_center_text">#323236</color>
+    <color name="bwt_title_right_text_normal">#087afa</color>
+    <color name="bwt_title_right_text_pressed">#095FC0</color>
+    <!-- 导航栏背景色 -->
+    <color name="bwt_title_bg_color">#ffffff</color>
+
+    <!-- 主标题文字：标题/标题文字 -->
+    <color name="bwt_primary_text_color">#323236</color>
+    <color name="bwt_primary_text_color_pressed">#C0C0C0</color>
+
+    <!-- 附属标题文字：附属标题/说明文字 -->
+    <color name="bwt_second_text_color">#b4b4b4</color>
+    <!-- 主色 按钮/提示点-->
+    <color name="bwt_primary_ui_color">#087afa</color>
+    <color name="bwt_primary_ui_color_pressed">#095FC0</color>
+
+    <!-- 弹窗按钮文字/主内容文字 -->
+    <color name="bwt_primary_content">#ff686868</color>
+
+    <!-- 应用背景色 -->
+    <color name="bwt_background_color">#f8f8f8</color>
+    <!-- 分割线 -->
+    <color name="bwt_divider_color">#f7f7f7</color>
+    <!-- 警告/异常情况 -->
+    <color name="bwt_primary_error_color">#f84f4f</color>
+    <!-- 输入框提示颜色 -->
+    <color name="bwt_edittext_hint">#b4b4b4</color>
+
+    <!-- 次UI颜色 -->
+    <color name="bwt_second_ui_color">#49a7fe</color>
+    <color name="bwt_second_ui_color_pressed">#095FC0</color>
+
+    <color name="bwt_second_error_color">#ff634e</color>
+    <color name="bwt_theme_warn">#ffbd42</color>
+</resources>

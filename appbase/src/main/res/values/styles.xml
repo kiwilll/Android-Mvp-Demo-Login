@@ -1,0 +1,29 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <!-- 自定义仿iOS的AlertDialog的样式 -->
+    <style name="BwtAlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- dialog逐渐显示动画 -->
+    <style name="BwtCenterAlphaAnimation" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/bwt_alpha_in</item>
+        <item name="@android:windowExitAnimation">@anim/bwt_alpha_out</item>
+    </style>
+
+    <!-- dialog底部弹出菜单动画 -->
+    <style name="BwtBottomMenuAnimation" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/bwt_bottom_menu_enter</item>
+        <item name="@android:windowExitAnimation">@anim/bwt_bottom_menu_exit</item>
+    </style>
+
+</resources>

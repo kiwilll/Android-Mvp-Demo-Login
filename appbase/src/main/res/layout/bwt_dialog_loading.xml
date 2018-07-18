@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bwt_bg_alert_dialog"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingLeft="28dp"
+    android:paddingRight="28dp">
+
+    <com.bwton.sdk.ridecode.uikit.loading.LoadingView
+        android:id="@+id/iv_dialog_loading"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="6dp" />
+
+
+    <TextView
+        android:id="@+id/tv_dialog_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
+        android:textColor="@color/bwt_dialog_loading_text"
+        android:textSize="18dp" />
+
+</LinearLayout>
