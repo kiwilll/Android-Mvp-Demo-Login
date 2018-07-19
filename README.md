@@ -122,7 +122,7 @@ HttpRequestConfig config = new HttpRequestConfig.Builder(this)
         .setPlatPublicKey("") //网络请求结果验签公钥
         .setVersion("")
         .setBaseUrl("")       //通用域名，以http或https开头
-        .setDebug(false)      //debug--是否打印网络请求日志
+        .setDebug(false)      //是否打印网络请求日志
         .setBundleId("")
         .build();
 HttpReqManager.init(config);
@@ -133,7 +133,7 @@ HttpReqManager.init(config);
 ```
 public interface DemoService {
 
-    //若使用初始化时的baseUrl作为请求域名 此处只有配置接口地址
+    //若使用初始化时的baseUrl作为请求域名 此处只需配置接口地址
     @POST("")
     Observable<BaseResponse> postSomething(@HeaderMap Map<String, String> headers, @Body String jsonBody);
 
@@ -174,6 +174,9 @@ public void doSomething() {
     removeDisposable(mDisposable);
 
     mDisposable = DemoApi.postSomething("something")
+            .subscribeOn(Schedulers.io())
+            .unsubscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe(new BaseApiResultConsumer<BaseResponse>() {
                 @Override
                 protected void handleResult(BaseResponse result) throws Exception {
@@ -188,6 +191,27 @@ public void doSomething() {
 
     addDisposable(mDisposable);
 }
+```
+
+##### 接口请求重试机制
+
+```
+mDisposable = DemoApi.postSomething("something")
+        .retryWhen(new RetryWithDelay(3, 0))  //接口重试次数，及延迟时间
+        .subscribeOn(Schedulers.io())
+        .unsubscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new BaseApiResultConsumer<BaseResponse>() {
+            @Override
+            protected void handleResult(BaseResponse result) throws Exception {
+                super.handleResult(result);
+            }
+        }, new BaseApiErrorConsumer<Throwable>(mContext, getView()) {
+            @Override
+            public void handleError(Throwable t, boolean handled) throws Exception {
+                super.handleError(t, handled);
+            }
+        });
 ```
 
 ##### 接口返回错误处理
@@ -212,6 +236,9 @@ private boolean handleApiException(ApiException e) {
 
 ```
  DemoApi.postSomething("something")
+ .subscribeOn(Schedulers.io())
+ .unsubscribeOn(Schedulers.io())
+ .observeOn(AndroidSchedulers.mainThread())
 .subscribe(new BaseApiResultConsumer<BaseResponse>() {
     @Override
     protected void handleResult(BaseResponse result) throws Exception {
@@ -235,7 +262,7 @@ private boolean handleApiException(ApiException e) {
 
 ##### 注意事项
 
-1. 网络请求结果拦截器中，对请求进行了验签，若验签不通过将直接作为异常抛出，若项目没有加签验签操作，或加签验签方式与本Demo不一致，请自行修改。
+1. 网络请求返回结果拦截器中，对请求进行了验签，若验签不通过将直接作为异常抛出，若项目没有加签验签操作，或加签验签方式与本Demo不一致，请自行修改。
 
 ```
 //com.hw.mvpbase.basenetwork.interceptor.ResponseInterceptor
