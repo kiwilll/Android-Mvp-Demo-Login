@@ -233,6 +233,32 @@ private boolean handleApiException(ApiException e) {
 });
 ```
 
+##### 注意事项
+
+1. 网络请求结果拦截器中，对请求进行了验签，若验签不通过将直接作为异常抛出，若项目没有加签验签操作，或加签验签方式与本Demo不一致，请自行修改。
+
+```
+//com.hw.mvpbase.basenetwork.interceptor.ResponseInterceptor
+
+    ...
+    ...
+    ...
+
+    @Override
+    public Response intercept(Chain chain) throws IOException {
+        ...
+        ...
+        ...
+
+        boolean isValid = HttpRespUtil.checkResponse(mConfig.getAppId(), timestamp, nonce, sequence, signature, bodyStr, mConfig.getPlatPublicKey());
+        if (!isValid) {
+            throw new SignInvalidException(mConfig.getContext().getString(R.string.bwt_error_msg_server_error));
+        } else {
+            return response;
+        }
+    }
+```
+
 ### Authors
 
 * hewei
