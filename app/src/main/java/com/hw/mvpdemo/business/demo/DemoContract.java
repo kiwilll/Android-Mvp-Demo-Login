@@ -5,7 +5,7 @@ import com.hw.mvpbase.baseview.mvp.BaseView;
 import com.hw.mvpdemo.business.login.LoginContract;
 
 /**
- * Created by hasee on 2018/7/18.
+ * Created by hw on 2018/7/18.
  */
 
 public interface DemoContract {

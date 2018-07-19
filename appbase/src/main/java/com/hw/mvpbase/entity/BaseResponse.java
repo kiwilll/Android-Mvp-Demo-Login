@@ -1,7 +1,7 @@
 package com.hw.mvpbase.entity;
 
 /**
- * Created by hasee on 2018/3/26.
+ * Created by hw on 2018/3/26.
  */
 
 public class BaseResponse<T> {

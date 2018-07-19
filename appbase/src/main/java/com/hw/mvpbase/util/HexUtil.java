@@ -1,7 +1,7 @@
 package com.hw.mvpbase.util;
 
 /**
- * Created by hasee on 2018/4/25.
+ * Created by hw on 2018/4/25.
  */
 
 public class HexUtil {

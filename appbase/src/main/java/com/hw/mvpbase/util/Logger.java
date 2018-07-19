@@ -3,7 +3,7 @@ package com.hw.mvpbase.util;
 import android.util.Log;
 
 /**
- * Created by hasee on 2018/4/25.
+ * Created by hw on 2018/4/25.
  */
 
 public class Logger {

@@ -13,7 +13,7 @@ import java.util.zip.CRC32;
 import java.util.zip.CheckedInputStream;
 
 /**
- * Created by hasee on 2018/4/28.
+ * Created by hw on 2018/4/28.
  */
 
 public class Hash {

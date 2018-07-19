@@ -5,7 +5,7 @@ import android.app.Activity;
 import com.hw.mvpbase.baseview.BaseActivity;
 
 /**
- * Created by hasee on 2018/7/18.
+ * Created by hw on 2018/7/18.
  */
 
 public class DemoActivity extends BaseActivity implements DemoContract.View {

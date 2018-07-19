@@ -36,7 +36,7 @@ import static android.os.Build.VERSION_CODES.M;
 import static android.os.Environment.MEDIA_MOUNTED;
 
 /**
- * Created by hasee on 2017/3/28.
+ * Created by hw on 2017/3/28.
  */
 
 public class CommonUtil {

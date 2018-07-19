@@ -13,7 +13,7 @@ import com.hw.mvpdemo.business.login.LoginContract;
 import io.reactivex.disposables.Disposable;
 
 /**
- * Created by hasee on 2018/7/18.
+ * Created by hw on 2018/7/18.
  */
 
 public class DemoPresenter extends DemoContract.Presenter {
