@@ -1,4 +1,4 @@
-### Android Mvp Demo
+### Android MVP Demo
 
 使用MVP架构，对网络层进行封装，提供基本的加签验签，加密解密。以登录模块业务功能为范本的一个Demo.
 
