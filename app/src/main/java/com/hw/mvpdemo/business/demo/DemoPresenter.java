@@ -26,7 +26,7 @@ public class DemoPresenter extends DemoContract.Presenter {
     }
 
     @Override
-    public void attachView(@NonNull LoginContract.View view) {
+    public void attachView(@NonNull DemoContract.View view) {
         super.attachView(view);
     }
 

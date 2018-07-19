@@ -19,7 +19,7 @@ public interface DemoContract {
         void showSomething(String something);
     }
 
-    abstract class Presenter extends AbstractPresenter<LoginContract.View> {
+    abstract class Presenter extends AbstractPresenter<DemoContract.View> {
 
         /**
          * 业务功能

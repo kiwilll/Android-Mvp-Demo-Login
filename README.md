@@ -1,4 +1,4 @@
-### android-mvp demo
+### Android Mvp Demo
 
 使用MVP架构，对网络层进行封装，提供基本的加签验签，加密解密。以登录模块业务功能为范本的一个Demo.
 
@@ -16,7 +16,7 @@ compile 'io.reactivex.rxjava2:rxjava:2.0.1'
 compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
 compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-compile 'com.rengwuxian.materialedittext:library:2.1.4'
+compile 'com.rengwuxian.materialedittext:library:2.1.4'   //EditTextView
 ```
 
 ### 第三方依赖-业务层
@@ -31,7 +31,7 @@ annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
 
 #####  使用MVP搭建自己的页面
 
-1.创建Contract
+1. 创建Contract
 
 ```
 public interface DemoContract {
@@ -45,7 +45,7 @@ public interface DemoContract {
         void showSomething(String something);
     }
 
-    abstract class Presenter extends AbstractPresenter<LoginContract.View> {
+    abstract class Presenter extends AbstractPresenter<DemoContract.View> {
 
         /**
          * 业务功能
@@ -57,7 +57,7 @@ public interface DemoContract {
 }
 ```
 
-2.创建界面继承BaseActivity,并实现Contract中的View接口
+2. 创建界面继承BaseActivity,并实现Contract中的View接口
 * BaseActivity中已经实现了底层中的多个基础方法，有利于通用业务的集中处理
 
 ```
@@ -80,7 +80,7 @@ public class DemoActivity extends BaseActivity implements DemoContract.View {
 }
 ```
 
-3.创建Presenter继承Contract中的Presenter
+3. 创建Presenter继承Contract中的Presenter
 
 ```
 public class DemoPresenter extends DemoContract.Presenter {
@@ -91,7 +91,7 @@ public class DemoPresenter extends DemoContract.Presenter {
     }
 
     @Override
-    public void attachView(@NonNull LoginContract.View view) {
+    public void attachView(@NonNull DemoContract.View view) {
         super.attachView(view);
     }
 
@@ -108,24 +108,41 @@ public class DemoPresenter extends DemoContract.Presenter {
 }
 ```
 
-4.实现接口
+4. 实现接口
 * 根据自己定义的业务接口进行重写实现
 
 ##### 搭建自己的API接口请求
 
-1. 创建Service
+1. 在Application中对网络层初始化
+
+```
+//可根据自己项目业务需求 更改配置文件内容
+HttpRequestConfig config = new HttpRequestConfig.Builder(this)
+        .setAppId("")
+        .setPlatPublicKey("") //网络请求结果验签公钥
+        .setVersion("")
+        .setBaseUrl("")       //通用域名，以http或https开头
+        .setDebug(false)      //debug--是否打印网络请求日志
+        .setBundleId("")
+        .build();
+HttpReqManager.init(config);
+```
+
+2. 创建Service
 
 ```
 public interface DemoService {
 
+    //若使用初始化时的baseUrl作为请求域名 此处只有配置接口地址
     @POST("")
     Observable<BaseResponse> postSomething(@HeaderMap Map<String, String> headers, @Body String jsonBody);
 
+    //若需要自定义请求域名，可将接口完整地址作为url参数传入
     Observable<BaseResponse> postSomething(@Url String url, @HeaderMap Map<String, String> headers, @Body String jsonBody);
 }
 ```
 
-2. 创建实现类
+3. 创建实现类
 
 ```
 public class DemoApi extends BaseApi {
@@ -149,7 +166,7 @@ public class DemoApi extends BaseApi {
 }
 ```
 
-3. 在Presenter中使用
+4. 在Presenter中使用
 
 ```
 @Override
@@ -178,7 +195,7 @@ public void doSomething() {
 1. 通用业务处理
 
 ```
-//在com.hw.mvpbase.basenetwork.consume。BaseApiErrorConsumer中
+//在com.hw.mvpbase.basenetwork.consume.BaseApiErrorConsumer中
 /**
  * 处理ApiException，这里仅仅处理一些常规、全局的异常
  *
